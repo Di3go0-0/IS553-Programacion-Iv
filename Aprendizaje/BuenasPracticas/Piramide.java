@@ -1,9 +1,9 @@
 package BuenasPracticas;
 
 public class Piramide {
-    private byte altura;
+    private int altura;
 
-    public Piramide(byte altura) {
+    public Piramide(int altura) {
         this.altura = altura;
     }
     //Metodo para imprimir la piramide
