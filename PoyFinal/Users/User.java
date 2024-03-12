@@ -1,4 +1,4 @@
-package PoyFinal;
+package PoyFinal.Users;
 
 public class User {
     private String name;
