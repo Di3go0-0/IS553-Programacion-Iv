@@ -16,34 +16,50 @@ public class Menu {
         this.option = inputHandler.getOption();
     }
 
-    public void options() {
-        switch (this.option) {
-            case 1:
-                registerClient();
-                break;
-            case 2:
-                login();
-                break;
-            case 3:
-                System.out.println("Saliendo...");
-                System.exit(0);
-                break;
-            default:
-                break;
+    public void menuLoop() {
+        while(this.option != 3){
+            printOptions();
+            scannerOptions();
+            switch (this.option) {
+                case 1:
+                    registerClient();
+                    break;
+                case 2:
+                    loginClient();
+                    break;
+                case 3:
+                    System.out.println("Saliendo...");
+                    this.option = 3;
+                    break;
+                default:
+                    break;
+            }
         }
+        
     }
 
     private void registerClient() {
+        String typeCC = inputHandler.getInput("Ingresa tu tipo de documento: ");
+        String cc = inputHandler.getInput("Ingresa tu número de documento: ");
         String name = inputHandler.getInput("Ingresa tu nombre: ");
+        String lastName = inputHandler.getInput("Ingresa tu apellido: ");
         String email = inputHandler.getInput("Ingresa tu correo electrónico: ");
+        String address = inputHandler.getInput("Ingresa tu dirección: ");
+        String city = inputHandler.getInput("Ingresa tu ciudad: ");
+        String phone = inputHandler.getInput("Ingresa tu número de teléfono: ");
         String password = inputHandler.getInput("Ingresa tu contraseña: ");
-        userManager.registerClient(name, email, password);
+        String password2 = inputHandler.getInput("Confirma tu contraseña: ");
+        while (!password.equals(password2)) {
+            System.out.println("Las contraseñas no coinciden.");
+            password = inputHandler.getInput("Ingresa tu contraseña: ");
+            password2 = inputHandler.getInput("Confirma tu contraseña: ");
+        }
+        userManager.registerClient(typeCC, cc, name, lastName, email, address, city, phone, password);
     }
 
-    private void login() {
-        String name = inputHandler.getInput("Ingresa tu nombre: ");
+    private void loginClient() {
         String email = inputHandler.getInput("Ingresa tu correo electrónico: ");
         String password = inputHandler.getInput("Ingresa tu contraseña: ");
-        userManager.login(name, email, password);
+        userManager.loginClient(email, password);
     }
 }
