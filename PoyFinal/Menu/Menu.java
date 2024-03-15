@@ -22,10 +22,10 @@ public class Menu {
             scannerOptions();
             switch (this.option) {
                 case 1:
-                    registerClient();
+                    userManager.registerClient();
                     break;
                 case 2:
-                    loginClient();
+                    userManager.loginClient();
                     break;
                 case 3:
                     System.out.println("Saliendo...");
@@ -38,28 +38,4 @@ public class Menu {
         
     }
 
-    private void registerClient() {
-        String typeCC = inputHandler.getInput("Ingresa tu tipo de documento: ");
-        String cc = inputHandler.getInput("Ingresa tu número de documento: ");
-        String name = inputHandler.getInput("Ingresa tu nombre: ");
-        String lastName = inputHandler.getInput("Ingresa tu apellido: ");
-        String email = inputHandler.getInput("Ingresa tu correo electrónico: ");
-        String address = inputHandler.getInput("Ingresa tu dirección: ");
-        String city = inputHandler.getInput("Ingresa tu ciudad: ");
-        String phone = inputHandler.getInput("Ingresa tu número de teléfono: ");
-        String password = inputHandler.getInput("Ingresa tu contraseña: ");
-        String password2 = inputHandler.getInput("Confirma tu contraseña: ");
-        while (!password.equals(password2)) {
-            System.out.println("Las contraseñas no coinciden.");
-            password = inputHandler.getInput("Ingresa tu contraseña: ");
-            password2 = inputHandler.getInput("Confirma tu contraseña: ");
-        }
-        userManager.registerClient(typeCC, cc, name, lastName, email, address, city, phone, password);
-    }
-
-    private void loginClient() {
-        String email = inputHandler.getInput("Ingresa tu correo electrónico: ");
-        String password = inputHandler.getInput("Ingresa tu contraseña: ");
-        userManager.loginClient(email, password);
-    }
 }
