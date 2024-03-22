@@ -22,10 +22,16 @@ public class UserManager {
         String phone = inputHandler.getInput("Ingresa tu número de teléfono: ");
         String password = inputHandler.getInput("Ingresa tu contraseña: ");
         String password2 = inputHandler.getInput("Confirma tu contraseña: ");
-        while (!password.equals(password2)) {
+        int attempts =  0;
+        while (!password.equals(password2) && attempts < 3) {
             System.out.println("Las contraseñas no coinciden.");
             password = inputHandler.getInput("Ingresa tu contraseña: ");
             password2 = inputHandler.getInput("Confirma tu contraseña: ");
+            attempts++;
+        }
+        if (attempts == 3) {
+            System.out.println("Registro fallido después de 3 intentos de ingresar una contraseña.");
+            return;
         }
         this.registerClient(typeCC, cc, name, lastName, email, address, city, phone, password);
     }

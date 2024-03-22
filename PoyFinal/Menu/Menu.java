@@ -8,11 +8,11 @@ public class Menu {
     private UserManager userManager = new UserManager();
     private InputHandler inputHandler = new InputHandler();
 
-    public void printOptions() {
+    private void printOptions() {
         inputHandler.printOptions();
     }
 
-    public void scannerOptions() {
+    private void scannerOptions() {
         this.option = inputHandler.getOption();
     }
 
