@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="Utils.InputHandler"/>
+    <fullyQualifiedTypeName name="Menu.Menu"/>
+    <fullyQualifiedTypeName name="java.awt.desktop.UserSessionListener"/>
+    <fullyQualifiedTypeName name="Users.UserManager"/>
+    <fullyQualifiedTypeName name="Controllers.LoginController"/>
+    <fullyQualifiedTypeName name="Views.HomeView"/>
+    <fullyQualifiedTypeName name="Views.RegisterView"/>
+    <fullyQualifiedTypeName name="Controllers.RegisterController"/>
+    <fullyQualifiedTypeName name="Views.LoginView"/>
+</qualifiedTypeNameHistroy>

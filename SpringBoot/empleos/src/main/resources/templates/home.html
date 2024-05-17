@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.orm">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practiva</title>
+  </head>
+  <body>
+    <h1 th:text="Hola +' '+ ${mensaje}"></h1>
+    <h1>Hola [[${mensaje}]]</h1>
+
+    <h1 th:text="Nombre +' '+ ${nombre}"></h1>
+    <h1>Nombre [[${nombre}]]</h1>
+    
+    <h2 th:text="Salario +' '+ ${salario}"></h2>
+    <h2>Salario [[${salario}]]</h2>
+
+    <h3 th:text="Vigente +' '+ ${vigente}"></h3>
+    <h3>Vigente [[${vigente}]]</h3>
+
+    <h4 th:text="Fecha +' '+ ${fecha}"></h4>
+    <h4>Fecha [[${fecha}]]</h4>
+  </body>
+</html>

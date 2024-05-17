@@ -1,0 +1,10 @@
+private String idType;
+    private String id;
+    private String names;
+    private String lastNames;
+    private String email;
+    private String residenceAddress;
+    private String residenceCity;
+    private String phone;
+    private String password;
+    private String confirmPassword;
